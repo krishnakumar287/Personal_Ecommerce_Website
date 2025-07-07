@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import CategoriesHeroSlideshow from "@/components/ui/CategoriesHeroSlideshow"
 import { useState } from "react"
 import Link from "next/link"
 import Footer from "@/components/footer"
@@ -92,74 +93,7 @@ export default function CategoriesPage() {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <motion.section
-        className="relative py-32 bg-black text-white overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-gold/10"
-            animate={{
-              background: [
-                "linear-gradient(45deg, rgba(212,175,55,0.2) 0%, transparent 50%, rgba(212,175,55,0.1) 100%)",
-                "linear-gradient(225deg, rgba(212,175,55,0.1) 0%, transparent 50%, rgba(212,175,55,0.2) 100%)",
-                "linear-gradient(45deg, rgba(212,175,55,0.2) 0%, transparent 50%, rgba(212,175,55,0.1) 100%)",
-              ],
-            }}
-            transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.h1
-              className="text-6xl md:text-8xl font-bold mb-8"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Categories
-            </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl text-gray-300 mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              Explore our carefully curated collections, each telling its own story of elegance and sophistication
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Floating Geometric Shapes */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-4 h-4 bg-gold/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </motion.section>
+      <CategoriesHeroSlideshow />
 
       {/* Categories Grid */}
       <section className="py-24 px-4">

@@ -2,6 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const heroSlides = [
   {
@@ -88,16 +89,23 @@ export default function HeroSlideshow() {
           </motion.p>
         </motion.div>
 
-        {/* Slide indicators */}
-        <div className="flex justify-center gap-2 mt-6">
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-3 h-3 rounded-full border border-gold/60 ${current === idx ? 'bg-gold' : 'bg-white/30'} transition-colors`}
-              onClick={() => setCurrent(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+        {/* Slide navigation arrows */}
+        <div className="flex justify-center items-center gap-8 mt-6">
+          <button
+            className="p-2 rounded-full border border-gold/60 bg-black/40 hover:bg-gold hover:text-black transition-colors"
+            onClick={() => setCurrent((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          <button
+            className="p-2 rounded-full border border-gold/60 bg-black/40 hover:bg-gold hover:text-black transition-colors"
+            onClick={() => setCurrent((prev) => (prev + 1) % heroSlides.length)}
+            aria-label="Next slide"
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
       </div>
 
