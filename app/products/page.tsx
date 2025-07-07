@@ -6,7 +6,14 @@ import { Grid, List, SlidersHorizontal, Search, ChevronDown } from "lucide-react
 import ProductCard from "@/components/product-card"
 import ProductFilters from "@/components/product-filters"
 import Footer from "@/components/footer"
+import dynamic from "next/dynamic"
 import HeroSlideshow from "@/components/ui/HeroSlideshow"
+
+// Import DelayedContent dynamically with no SSR to avoid window is not defined errors
+const DelayedContent = dynamic(
+  () => import("@/components/delayed-content").then((mod) => mod.DelayedContent),
+  { ssr: false }
+)
 
 const products = [
   {
@@ -119,7 +126,7 @@ export default function ProductsPage() {
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.2,
-      },
+      } as any,
     },
   }
 
@@ -130,13 +137,18 @@ export default function ProductsPage() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as any,
       },
     },
   }
 
   return (
     <main className="pt-20 min-h-screen">
+      <DelayedContent
+        minimumLoadingTime={800}
+        artificialDelay={200}
+        animation="fade"
+      >
       {/* Hero Slideshow Section */}
       <HeroSlideshow />
 
@@ -296,6 +308,7 @@ export default function ProductsPage() {
       </div>
 
       <Footer />
+      </DelayedContent>
     </main>
   )
 }
