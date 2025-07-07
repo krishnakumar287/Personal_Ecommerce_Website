@@ -7,6 +7,7 @@ import ProductCard from "@/components/product-card"
 import ProductFilters from "@/components/product-filters"
 import Footer from "@/components/footer"
 import dynamic from "next/dynamic"
+import HeroSlideshow from "@/components/ui/HeroSlideshow"
 
 // Import DelayedContent dynamically with no SSR to avoid window is not defined errors
 const DelayedContent = dynamic(
@@ -148,74 +149,8 @@ export default function ProductsPage() {
         artificialDelay={200}
         animation="fade"
       >
-      {/* Hero Section */}
-      <motion.section
-        className="relative py-24 bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="absolute inset-0">
-          <motion.div
-            className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1920')] bg-cover bg-center opacity-20"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            variants={headerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Our Collection
-            </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl text-gray-300 mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Discover premium fashion pieces crafted for the discerning individual
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Floating Elements */}
-        <motion.div
-          className="absolute top-20 left-10 w-20 h-20 border border-gold/30 rounded-full"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-16 h-16 bg-gold/20 rounded-full"
-          animate={{
-            y: [0, 20, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-      </motion.section>
+      {/* Hero Slideshow Section */}
+      <HeroSlideshow />
 
       {/* Search and Controls */}
       <motion.section
