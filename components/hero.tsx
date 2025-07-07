@@ -5,12 +5,12 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero-section relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url(/placeholder.svg?height=1080&width=1920)",
+          backgroundImage: "url(/placeholder.svg?height=900&width=1600)",
         }}
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl px-4">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          className="text-h1 font-bold mb-6 leading-heading font-heading"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -32,7 +32,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto"
+          className="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto font-body"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -48,13 +48,13 @@ export default function Hero() {
         >
           <Link
             href="/products"
-            className="px-8 py-4 bg-white text-black font-medium hover:bg-gold hover:text-black transition-all duration-300 transform hover:-translate-y-1"
+            className="btn px-8 py-4 bg-white text-black font-medium hover:bg-gold hover:text-black transition-all duration-300"
           >
             Shop Collection
           </Link>
           <Link
             href="/about"
-            className="px-8 py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300"
+            className="btn px-8 py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300"
           >
             Our Story
           </Link>
