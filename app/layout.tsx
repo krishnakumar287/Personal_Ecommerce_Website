@@ -7,6 +7,7 @@ import { WishlistProvider } from "@/contexts/wishlist-context"
 import { AuthProvider } from "@/contexts/auth-context"
 import Navigation from "@/components/navigation"
 import PageTransition from "@/components/page-transition"
+import NoSSR from "@/components/no-ssr"
 import { Toaster } from "@/components/ui/toaster"
 
 // Primary heading font (for h1, h2, h3)
@@ -41,7 +42,11 @@ export default function RootLayout({
           <CartProvider>
             <WishlistProvider>
               <Navigation />
-              <PageTransition>{children}</PageTransition>
+              <NoSSR>
+                <PageTransition minimumLoadingTime={800} artificialDelay={200}>
+                  {children}
+                </PageTransition>
+              </NoSSR>
               <Toaster />
             </WishlistProvider>
           </CartProvider>

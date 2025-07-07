@@ -262,7 +262,13 @@ h2.section-title::after {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(
+    90deg, 
+    rgba(240, 240, 240, 0.2) 0%, 
+    rgba(240, 240, 240, 0.6) 50%, 
+    rgba(240, 240, 240, 0.2) 100%
+  );
   background-size: 200px 100%;
-  animation: shimmer 1.5s infinite;
+  animation: shimmer 1.8s infinite;
+  border-radius: 4px;
 }
