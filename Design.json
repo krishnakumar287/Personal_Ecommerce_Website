@@ -1,0 +1,115 @@
+{
+  "typography": {
+    "headings": {
+      "fontFamily": "Playfair Display",
+      "weights": [600],
+      "style": "High-contrast serif with pronounced vertical stress",
+      "useCase": "Headings (h1–h3) only",
+      "emotion": "Elegant, editorial, refined"
+    },
+    "body": {
+      "fontFamily": "Outfit",
+      "weights": [300, 400, 500],
+      "style": "Geometric sans-serif with open spacing",
+      "useCase": "Paragraphs, labels, nav, buttons",
+      "emotion": "Clean, minimal, balanced"
+    },
+    "scale": {
+      "h1": "4rem",
+      "h2": "2.25rem",
+      "h3": "1.5rem",
+      "body": "1.05rem",
+      "small": "0.9rem",
+      "lineHeight": "1.6 - 1.75",
+      "tracking": "Tight for headings, relaxed for body"
+    }
+  },
+  "colorPalette": {
+    "black": {
+      "hex": "#1C1C1E",
+      "role": "Primary text, CTAs, overlays",
+      "emotion": "Powerful, grounded, timeless"
+    },
+    "offWhite": {
+      "hex": "#F5F5F2",
+      "role": "Background, light containers",
+      "emotion": "Soft, breathable, clean"
+    },
+    "gold": {
+      "hex": "#D4AF37",
+      "role": "Accent: hovers, underlines, CTAs",
+      "emotion": "Luxury, warmth, exclusivity"
+    },
+    "grey": {
+      "hex": "#7D7D7D",
+      "role": "Secondary text, metadata, dividers",
+      "emotion": "Neutral, supporting tone"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "sectionPadding": "120px 6%",
+      "gridGap": "40px – 60px",
+      "containerMaxWidth": "1440px"
+    },
+    "structure": {
+      "hero": {
+        "height": "100vh",
+        "alignment": "centered",
+        "visual": "Dark background image with overlay text"
+      },
+      "gridSystems": {
+        "products": "auto-fit, minmax(280px, 1fr)",
+        "categories": "auto-fit, minmax(220px, 1fr)",
+        "footer": "auto-fit, minmax(160px, 1fr)"
+      },
+      "responsive": {
+        "breakpoint": "768px",
+        "stacking": "Single column layout",
+        "textScaling": "h1 reduces to 2.6rem"
+      }
+    }
+  },
+  "imagery": {
+    "hero": {
+      "source": "https://via.placeholder.com/1600x900",
+      "role": "Immersive intro, lifestyle tone",
+      "effect": "Dimmed overlay for text legibility"
+    },
+    "products": {
+      "source": "https://via.placeholder.com/400x500",
+      "ratio": "4:5 vertical",
+      "style": "Clean product showcases"
+    },
+    "editorial": {
+      "source": "https://via.placeholder.com/600x400",
+      "use": "Story section",
+      "emotion": "Hand-crafted, luxury heritage"
+    }
+  },
+  "interactions": {
+    "buttons": {
+      "transition": "background-color + color",
+      "hoverEffect": "Gold background, black text",
+      "animation": "transform: translateY(-2px); box-shadow increase"
+    },
+    "cards": {
+      "productCard": "Subtle scale on hover (1.03), soft shadow",
+      "categoryCard": "Gold background on hover, text inverse, translateY(-5px)"
+    },
+    "scrollCue": {
+      "scrollIndicator": "Bounce animation, centered bottom of hero"
+    }
+  },
+  "aesthetic": {
+    "brandTone": "Minimal Luxe",
+    "emotionalGoal": "Calm confidence, exclusivity, timeless refinement",
+    "vibe": "Fashion editorial meets boutique eCommerce",
+    "principles": [
+      "Whitespace-led clarity",
+      "Sharp hierarchy via serif/sans pairing",
+      "Neutral palette + gold restraint",
+      "Responsive luxury on all devices"
+    ]
+  }
+}

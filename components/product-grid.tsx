@@ -47,8 +47,8 @@ export default function ProductGrid() {
   return (
     <section className="section-padding bg-off-white">
       <div className="container mx-auto px-8">
-        <h2 className="section-title text-4xl font-bold text-center mb-16">Featured Products</h2>
-        <div className="products-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <h2 className="section-title text-h2 font-bold text-center mb-16 font-heading">Featured Products</h2>
+        <div className="products-grid grid-gap mb-12">
           {products.map((product) => (
             <div key={product.id} className="product-card group cursor-pointer">
               <div className="relative overflow-hidden mb-4">
@@ -62,14 +62,14 @@ export default function ProductGrid() {
                 </div>
               </div>
               <div className="product-info">
-                <h3 className="text-xl font-medium mb-2">{product.name}</h3>
+                <h3 className="text-h3 font-medium mb-2 font-heading">{product.name}</h3>
                 <p className="text-2xl font-semibold text-gold">{product.price}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="text-center">
-          <button className="px-8 py-3 bg-transparent border border-black text-black hover:bg-black hover:text-white transition-colors rounded-md">
+          <button className="btn px-8 py-3 bg-transparent border border-black text-black hover:bg-gold hover:text-black transition-colors">
             View All Products
           </button>
         </div>
