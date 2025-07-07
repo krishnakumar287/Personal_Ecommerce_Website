@@ -19,6 +19,28 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['var(--font-playfair-display)', 'Georgia', 'serif'],
+        body: ['var(--font-outfit)', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': 'var(--h1-size)',
+        'h2': 'var(--h2-size)',
+        'h3': 'var(--h3-size)',
+        'body': 'var(--body-size)',
+        'small': 'var(--small-size)',
+      },
+      lineHeight: {
+        'body': 'var(--line-height)',
+        'heading': 'var(--line-height-heading)',
+      },
+      spacing: {
+        'section': 'var(--section-padding)',
+        'grid-gap': 'var(--grid-gap)',
+      },
+      maxWidth: {
+        'container': 'var(--container-max-width)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -26,24 +48,24 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1C1C1E",
-          foreground: "#F5F5F2",
+          DEFAULT: "#1C1C1E", // black from Design.json
+          foreground: "#F5F5F2", // off-white from Design.json
         },
         secondary: {
-          DEFAULT: "#F5F5F2",
-          foreground: "#1C1C1E",
+          DEFAULT: "#F5F5F2", // off-white from Design.json
+          foreground: "#1C1C1E", // black from Design.json
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#7D7D7D",
-          foreground: "#F5F5F2",
+          DEFAULT: "#7D7D7D", // grey from Design.json
+          foreground: "#F5F5F2", // off-white from Design.json
         },
         accent: {
-          DEFAULT: "#D4AF37",
-          foreground: "#1C1C1E",
+          DEFAULT: "#D4AF37", // gold from Design.json
+          foreground: "#1C1C1E", // black from Design.json
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -68,10 +90,25 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" }
+        },
+        "scale-up": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.03)" }
+        },
+        "lift-up": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-5px)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce": "bounce 2s ease-in-out infinite",
+        "scale-up": "scale-up 0.3s ease forwards",
+        "lift-up": "lift-up 0.3s ease forwards"
       },
     },
   },

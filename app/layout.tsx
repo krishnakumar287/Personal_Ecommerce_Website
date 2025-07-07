@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Playfair_Display, Outfit } from "next/font/google"
 import "./globals.css"
 import { CartProvider } from "@/contexts/cart-context"
 import { WishlistProvider } from "@/contexts/wishlist-context"
@@ -9,7 +9,19 @@ import Navigation from "@/components/navigation"
 import PageTransition from "@/components/page-transition"
 import { Toaster } from "@/components/ui/toaster"
 
-const inter = Inter({ subsets: ["latin"] })
+// Primary heading font (for h1, h2, h3)
+const playfairDisplay = Playfair_Display({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair-display"
+})
+
+// Body and UI text font
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit"
+})
 
 export const metadata: Metadata = {
   title: "Minimal Luxe - Premium Fashion & Lifestyle",
@@ -23,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${playfairDisplay.variable} ${outfit.variable}`}>
+      <body className={outfit.className}>
         <AuthProvider>
           <CartProvider>
             <WishlistProvider>

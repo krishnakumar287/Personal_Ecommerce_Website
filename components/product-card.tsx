@@ -88,7 +88,7 @@ export default function ProductCard({ product, viewMode = "grid" }: ProductCardP
       <motion.div variants={itemVariants}>
         <Link href={`/products/${product.id}`}>
           <div
-            className="flex gap-6 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="product-card flex gap-6 bg-white p-6 rounded-lg shadow-lg transition-all duration-300 group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -181,7 +181,7 @@ export default function ProductCard({ product, viewMode = "grid" }: ProductCardP
     <motion.div variants={itemVariants}>
       <Link href={`/products/${product.id}`}>
         <div
-          className="group cursor-pointer"
+          className="product-card group cursor-pointer"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
