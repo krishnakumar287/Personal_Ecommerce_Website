@@ -28,10 +28,10 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="py-24 px-4 bg-black text-white">
+    <section className="section-padding bg-black text-white">
       <div className="container mx-auto text-center">
         <motion.h2
-          className="text-4xl font-bold mb-6"
+          className="text-h2 font-bold mb-6 font-heading"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -41,7 +41,7 @@ export default function Newsletter() {
         </motion.h2>
 
         <motion.p
-          className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
+          className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-body"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -69,7 +69,7 @@ export default function Newsletter() {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className="px-8 py-3 bg-gold text-black font-medium hover:bg-gold/90 transition-colors disabled:opacity-50"
+            className="btn px-8 py-3 bg-gold text-black font-medium hover:bg-gold/90 transition-colors disabled:opacity-50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
